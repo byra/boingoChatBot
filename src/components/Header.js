@@ -1,6 +1,5 @@
 import React from "react";
 import {Component} from "react";
-import "../styles/header.css";
 
 class Header extends Component{
 
@@ -11,7 +10,7 @@ class Header extends Component{
     render(){
         return(
             <div className="header-title">
-                <p>hi</p>
+                <h3>Technical Support Assistant </h3>
             </div>
         )
     }

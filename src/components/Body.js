@@ -9,6 +9,7 @@ class Body extends Component{
     render(){
         return(
             <div className="body-container">
+                <button>Get Help</button>
             </div>
         )
     }
