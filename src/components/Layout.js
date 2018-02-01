@@ -1,5 +1,7 @@
 import React from "react";
 import {Component} from "react";
+import Header from "./Header";
+import Body from "./Body";
 
 class Layout extends Component{
 
@@ -7,20 +9,19 @@ class Layout extends Component{
         super(props)
 
     }
-
     render(){
         return(
             <div>
                 <div>
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="titlespace">
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <Header/>
                     </div>
-                </div>
-                <div>
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="dataspace">
+                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <Body/>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 

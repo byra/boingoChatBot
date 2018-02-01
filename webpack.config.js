@@ -7,6 +7,7 @@ module.exports = {
 
     output:{
         path:path.join(__dirname,"./dist"),
+        publicPath: "",
         filename:"bundle.js"
     },
 
@@ -17,7 +18,7 @@ module.exports = {
     module:{
         loaders:[
             {test:/\.jsx?$/, exclude:/node_modules/, loader:"babel-loader", query:{presets:["env","react"]}},
-            {test:/\.css$/, loader:"css-loader!style-loader"},
+            {test:/\.css$/, loader:"style-loader!css-loader"},
             {test:/\.(png|jpg|gif)/, loader:"file-loader"}
         ]
     },

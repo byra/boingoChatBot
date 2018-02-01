@@ -4,8 +4,8 @@
   "description": "demo project for support chat bot",
   "main": "./src/configurations/index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline",
-    "build": "webpack --config webpack.config.production.js"
+    "start": "webpack-dev-server --hot --inline --debug --devtool eval --open",
+    "build": "webpack --config webpack.config.production.js --optimize-minimize --progress"
   },
   "author": "Manikanta Mahesh Byra",
   "license": "Apache License 2.0",
@@ -13,7 +13,7 @@
     "bootstrap": "^4.0.0",
     "cross-fetch": "^1.1.1",
     "jquery": "^3.3.1",
-    "popper": "^1.0.1",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
