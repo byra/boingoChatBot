@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import {chatOpenReducer} from "./chatOpenReducer";
+import {status} from "./status";
 
 const reducers = combineReducers({
-    chatOpenReducer
+    status
 });
 
 export default reducers;

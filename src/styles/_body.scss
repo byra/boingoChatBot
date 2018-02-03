@@ -1,5 +1,45 @@
-@import "bootstrapRequired";
 
+$background-color: #c5c5c5;
+$height: 89vh;
 
+.body-container{
+  background: linear-gradient(to right, $background-color 0%, $background-color * .8 100%);
+  height: $height;
+};
 
+.action-container{
+  height: $height;
 
+  button{
+    margin-top: $height * .4;
+  };
+};
+
+.chat-container{
+  z-index: $zindex-modal;
+  margin-top: $height * .2;
+
+  .chat-header{
+    background-color: $background-color * .7;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+
+    .chat-container__img{
+      height: 1em;
+    };
+  };
+
+  .chat-body{
+    background-color: $background-color * 1.2;
+    height: $height * .5;
+  };
+
+  .chat-footer{
+    background-color: $background-color * .9;
+
+    input{
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    };
+  };
+};

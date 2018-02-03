@@ -1,19 +1,27 @@
 import React from "react";
 import {Component} from "react";
 
-class Header extends Component{
+class Header extends Component {
 
-    constructor(props){
-        super(props)
-    }
+    constructor(props) {
+        super(props);
+    };
 
-    render(){
-        return(
-            <div className="header-title">
-                <h3>Technical Support Assistant </h3>
+    render() {
+        return (
+            <div className="header-container">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light header-navbar">
+                    <a className="navbar-brand" href="#">Technical Support Assistant</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon">
+                            </span>
+                    </button>
+                </nav>
             </div>
-        )
-    }
+        );
+    };
 }
 
 export default Header;

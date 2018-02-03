@@ -1,2 +1,11 @@
-@import "bootstrapRequired";
-@import "../../node_modules/bootstrap/scss/grid";
+
+body {
+  margin: 0;
+};
+
+.layout-container {
+  max-width: none !important;
+  margin: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+};
