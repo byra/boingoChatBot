@@ -4,7 +4,7 @@ export const changeStatusToOpen = () =>{
     };
 };
 
-export const chnageStatusToClose = () =>{
+export const changeStatusToClose = () =>{
     return{
         type:"close"
     };

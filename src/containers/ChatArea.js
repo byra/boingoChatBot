@@ -1,15 +1,19 @@
 import React from "react";
 import {Component} from "react";
 import {connect} from "react-redux";
-import {chnageStatusToClose} from "../actions/status";
-import {status} from "../reducers/status";
+import {changeStatusToClose} from "../actions/status";
+import {onEmail} from "../actions/chatMessages";
+import Chat from "./Chat"
 
 class ChatArea extends Component {
     constructor(props) {
         super(props);
     };
 
+
+
     render() {
+        let userMsg="";
         return (
             <div className="chat-container">
                 <div className="row justify-content-center">
@@ -27,7 +31,7 @@ class ChatArea extends Component {
                 <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-6 col-sm-6">
                         <div className="chat-body">
-
+                            <Chat/>
                         </div>
                     </div>
                 </div>
@@ -36,7 +40,21 @@ class ChatArea extends Component {
                         <div className="chat-footer">
                             <div className="d-flex justify-content-between">
                                 <div className="input-group input-group-lg">
-                                    <input type="text" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"/>
+                                    <input type="text" className="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                                           ref={node =>
+                                                {
+                                                    userMsg = node
+                                                }
+                                            }
+                                           onKeyPress={
+                                               (event) => {
+                                                   if (event.key === 'Enter' && userMsg.value.trim() !== "") {
+                                                       this.props.fetchResponse(userMsg.value.trim());
+                                                       userMsg.value = "";
+                                                   }
+                                               }
+                                           }
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -53,10 +71,11 @@ const mapStateToProps = (state) =>{
     };
 };
 
-const mapDispatchToprops = (dispatch) =>{
+const mapDispatchToProps = (dispatch) =>{
     return{
-        statusUpdateToClose : () => dispatch(chnageStatusToClose())
+        statusUpdateToClose : () => dispatch(changeStatusToClose()),
+        fetchResponse: (customRequest) => dispatch(onEmail(customRequest)),
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToprops)(ChatArea);
+export default connect(mapStateToProps, mapDispatchToProps)(ChatArea);
