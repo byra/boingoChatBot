@@ -39,7 +39,7 @@ class BotButtons extends Component{
                     <div className="btn-group btn-group-sm">
                     {
                         this.props.buttons.map(button => (
-                            <button type="button" className="btn-secondary btn-sm" role="group" key={v4()}
+                            <button type="button" className="btn-sm btn-custom" role="group" key={v4()}
                                     onClick={() => this.nextAction(button.replace(/\s/g, ''))}>{button}</button>
                         ))
                     }

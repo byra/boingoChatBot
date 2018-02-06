@@ -10,8 +10,6 @@ class ChatArea extends Component {
         super(props);
     };
 
-
-
     render() {
         let userMsg="";
         return (

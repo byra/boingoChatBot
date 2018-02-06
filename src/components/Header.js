@@ -22,14 +22,14 @@ class Header extends Component {
                         <div className="p-2">
                             <div className="d-flex justify-content-center">
                                 <a className="navbar-brand" href="#">
-                                    <p className="h1">Datamorphix Smart Assistant</p>
+                                    <p className="h1">Datamorphix Converse Bot</p>
                                 </a>
                             </div>
                         </div>
                         <div className="p-2">
                             <div className="d-flex justify-content-center">
                                 <p className="h5">
-                                    Welcome to the Datamorphix Smart Assistant. Your assistant Tina is here to help.
+                                    Welcome to the Datamorphix Converse Bot. Your assistant Tina is here to help.
                                 </p>
                             </div>
                         </div>

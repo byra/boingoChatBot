@@ -13,9 +13,15 @@ class Messages extends Component {
         super(props);
     };
 
+    componentDidUpdate(){
+        let elementBody =  document.getElementsByClassName("chat-body")[0];
+        let elementChild =  document.getElementsByClassName("chat-text__container")[0];
+        elementBody.scrollBy(0,elementChild.clientHeight + elementBody.clientHeight );
+    };
+
     render() {
         return (
-            <div>
+            <div className="chat-text__container">
                 {
                     this.props.texts.map(text => (
                             <div key={v4()} className="d-flex flex-column">
