@@ -1,5 +1,6 @@
 import React from "react";
 import {Component} from "react";
+import dmLogo from "../assets/images/datamorphixLogo.png"
 
 class Header extends Component {
 
@@ -10,15 +11,34 @@ class Header extends Component {
     render() {
         return (
             <div className="header-container">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light header-navbar">
-                    <a className="navbar-brand" href="#">Technical Support Assistant</a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon">
-                            </span>
-                    </button>
-                </nav>
+                <div className="d-flex  justify-content-between">
+                    <div className="align-self-center">
+                        <div className="d-flex justify-content-end header-container__logo">
+                            <img src={dmLogo}  alt="logo"/>
+                        </div>
+                    </div>
+
+                    <div className="d-flex flex-column header-container__title">
+                        <div className="p-2">
+                            <div className="d-flex justify-content-center">
+                                <a className="navbar-brand" href="#">
+                                    <p className="h1">Datamorphix Smart Assistant</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="p-2">
+                            <div className="d-flex justify-content-center">
+                                <p className="h5">
+                                    Welcome to the Datamorphix Smart Assistant. Your assistant Tina is here to help.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="align-self-center header-container__button">
+                        <button className="btn btn-info">Learn more</button>
+                    </div>
+                </div>
             </div>
         );
     };

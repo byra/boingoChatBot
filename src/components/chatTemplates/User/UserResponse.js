@@ -7,11 +7,22 @@ class UserResponse extends Component{
     };
 
     render(){
-      return(
-          <div className="d-flex justify-content-end">
-              <p className="h5">{this.props.userResponse}</p>
-          </div>
-      );
+        if(this.props.userResponse !==null){
+            return(
+                <div className="d-flex flex-row-reverse chat-body__msg--div">
+                    <div className="p-2 rounded chat-body__msg">
+                        <p className="h5">{this.props.userResponse}</p>
+                    </div>
+                </div>
+            );
+        }
+        else{
+            return(
+                <div>
+                </div>
+            );
+        }
+
     };
 }
 

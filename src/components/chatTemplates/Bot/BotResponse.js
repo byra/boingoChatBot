@@ -7,11 +7,23 @@ class BotResponse extends Component{
     };
 
     render(){
-        return(
-            <div className="p-2 chat-text__msg">
-                <p className="h5">{this.props.response}</p>
-            </div>
-        );
+        if(this.props.response !==null){
+            return(
+                <div className="d-flex flex-row chat-body__msg--div">
+                    <div className="p-2 rounded chat-body__msg">
+                        <p className="h5">{this.props.response}</p>
+                    </div>
+                </div>
+            );
+        }
+        else {
+            return(
+                <div>
+
+                </div>
+            )
+        }
+
     };
 }
 

@@ -15,11 +15,14 @@ class Bot extends Component{
         }
         else{
             return(
-                <div className="d-flex justify-content-center">
-                    <div className="action-container">
-                    <button className="btn btn-lg" onClick={()=>this.props.statusUpdateToOpen()}> Get Help</button>
+                <div className="col-2 col-lg-2 col-sm-2 col-md-2 offset-md-9 offset-lg-9 offset-9 offset-sm-9">
+                    <div className="d-flex justify-content-end">
+                        <div className="action-container">
+                            <img className="" onClick={()=>this.props.statusUpdateToOpen()} src={"./src/assets/images/message.svg"}/>
+                        </div>
                     </div>
                 </div>
+
             );
         }
 

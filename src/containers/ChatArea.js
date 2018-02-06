@@ -16,27 +16,27 @@ class ChatArea extends Component {
         let userMsg="";
         return (
             <div className="chat-container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-6 col-md-6 col-sm-6">
+                <div className="row justify-content-start">
+                    <div className="col-lg-11 col-md-11 col-sm-11">
                         <div className="chat-header">
                             <div className="d-flex justify-content-between">
                                 <p className="h6">
-                                    TSA
+                                    Tina
                                 </p>
-                                <img className="figure-img img-fluid rounded chat-container__img" onClick={()=>this.props.statusUpdateToClose()} src={"./src/assets/images/closeIcon.svg"}/>
+                                <img className="figure-img img-fluid rounded chat-header__img" onClick={()=>this.props.statusUpdateToClose()} src={"./src/assets/images/closeIcon.svg"}/>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
-                    <div className="col-lg-6 col-md-6 col-sm-6">
+                <div className="row justify-content-start">
+                    <div className="col-lg-11 col-md-11 col-sm-11">
                         <div className="chat-body">
                             <Chat/>
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
-                    <div className="col-lg-6 col-md-6 col-sm-6">
+                <div className="row justify-content-start">
+                    <div className="col-lg-11 col-md-11 col-sm-11">
                         <div className="chat-footer">
                             <div className="d-flex justify-content-between">
                                 <div className="input-group input-group-lg">

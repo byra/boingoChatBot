@@ -10,8 +10,8 @@ class Body extends Component {
     render() {
         return (
             <div className="body-container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-10 col-md-10 col-sm-10 col-10">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 offset-md-6 offset-lg-6 offset-6 offset-sm-6">
                         <Bot/>
                     </div>
                 </div>

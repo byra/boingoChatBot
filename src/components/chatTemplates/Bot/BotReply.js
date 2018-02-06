@@ -9,8 +9,8 @@ class BotReply extends Component{
 
     render() {
         return (
-            <div className="p-2  chat-text__msg">
-                <div className="rounded">
+            <div className="d-flex flex-row chat-body__msg--div">
+                <div className="p-2 rounded chat-body__msg">
                     {
                         this.props.reply.map(msg =>(
                             <p key={v4()} className="h5">{msg}</p>

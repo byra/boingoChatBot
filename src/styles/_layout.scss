@@ -3,9 +3,11 @@ body {
   margin: 0;
 };
 
-.layout-container {
-  max-width: none !important;
+.layout-container{
+  padding: 0;
   margin: 0;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 };
+
+.layout-header, .layout-body, .layout-footer{
+  padding: 0;
+}
