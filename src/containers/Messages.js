@@ -6,6 +6,7 @@ import BotResponse from "../components/chatTemplates/Bot/BotResponse";
 import BotButtons from "./BotButtons"
 import UserResponse from "../components/chatTemplates/User/UserResponse";
 import CustomRequest from "../components/chatTemplates/User/CustomRequest";
+import Time from "../components/chatTemplates/Time";
 
 class Messages extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Messages extends Component {
                 {
                     this.props.texts.map(text => (
                             <div key={v4()} className="d-flex flex-column">
+                                <Time/>
                                 <UserResponse userResponse={text.userResponse}/>
                                 <CustomRequest userRequest ={text.customRequest}/>
                                 <BotReply reply={text.reply}/>

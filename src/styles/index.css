@@ -4364,7 +4364,9 @@ mark,
     content: "\2014 \00A0"; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 .layout-container {
   padding: 0;
@@ -4417,13 +4419,20 @@ body {
   .chat-container .chat-body {
     background-color: #DCEAF3;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 56.16vh; }
     .chat-container .chat-body .chat-body__msg--div {
-      padding: 0.1em; }
+      padding: 0.3em; }
     .chat-container .chat-body .chat-body__msg {
       background-color: #a1afb8;
       padding-top: 0 !important;
       padding-bottom: 0 !important; }
+      .chat-container .chat-body .chat-body__msg p {
+        margin: 0;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em; }
+    .chat-container .chat-body .chat-body__msg--time {
+      background-color: #DCEAF3; }
   .chat-container .chat-footer input {
     background-color: #DCEAF3;
     border-top-left-radius: 0;

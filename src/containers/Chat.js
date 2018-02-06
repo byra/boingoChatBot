@@ -18,7 +18,7 @@ class Chat extends Component{
      render(){
         return(
             <div className="container chat-text">
-                <div className="row justify-content-center">
+                <div className="row justify-content-start">
                     <div className="col-sm-11 col-lg-11 col-md-11">
                         <Messages texts={this.props.texts}/>
                     </div>

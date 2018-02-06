@@ -1,7 +1,7 @@
 
 $background-color: #00b7df;
 $chat-body-color: #DCEAF3;
-$chat-text-bg-color: rgba(190, 190, 190, 0.96);
+$chat-text-bg-color: rgba(210, 210, 210, 0.96);
 
 $height: 78vh;
 
@@ -36,22 +36,32 @@ $height: 78vh;
 
     p{
       padding-left: 1em;
+
     }
   };
 
   .chat-body{
     background-color: $chat-body-color;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: $height * .72;
 
     .chat-body__msg--div{
-      padding: 0.1em;
+      padding: 0.3em;
     }
     .chat-body__msg{
       background-color: #a1afb8;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
+      p{
+        margin: 0;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+      }
     }
+    .chat-body__msg--time{
+      background-color: $chat-body-color;
+    };
   };
 
   .chat-footer{
