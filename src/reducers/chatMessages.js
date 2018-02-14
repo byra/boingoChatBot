@@ -8,18 +8,27 @@ export const chatMessages = (state = [], action)=>{
                     {
                         userResponse:null,
                         customRequest:null,
+                        url:[],
                         reply:["Welcome to Technical support! My name is Tina."],
                         response:"What can I help you with today?",
                         buttons:["Technical Support","Manage Account","Billing Inquiry","Account Cancellation"]
                     }
             ];
 
-        case "technicalSupport":
+        case "technicalProblemDescription":
+            let userResponse = null;
+            let customRequest = null;
+            if(action.payload){
+                customRequest = action.payload.tracker.latest_message.text
+            }
+            else{
+                userResponse = "Technical Support"
+            }
             return [
                 ...state,
                 {
-                    userResponse:"Technical Support",
-                    customRequest:null,
+                    userResponse:userResponse,
+                    customRequest:customRequest,
                     reply:["Thank you, I can definitely help you out with Technical Support."],
                     response:"Please describe your issue or question or Select a topic from frequently asked questions which can answer your question",
                     buttons:["Cannot Connect To Wifi","I am connected But Cannot React Internet", "Device Limit Reached", "Frequent Disconnects"]

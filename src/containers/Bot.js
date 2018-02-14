@@ -3,6 +3,7 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import ChatArea from "./ChatArea";
 import {changeStatusToOpen} from "../actions/status";
+import MessageLogo from "../assets/images/message.svg"
 
 class Bot extends Component{
     constructor(props){
@@ -18,7 +19,7 @@ class Bot extends Component{
                 <div className="col-2 col-lg-2 col-sm-2 col-md-2 offset-md-9 offset-lg-9 offset-9 offset-sm-9">
                     <div className="d-flex justify-content-end">
                         <div className="action-container">
-                            <img className="" onClick={()=>this.props.statusUpdateToOpen()} src={"./src/assets/images/message.svg"}/>
+                            <MessageLogo className="chat-icon App-logo" onClick={()=>this.props.statusUpdateToOpen()} ariaLabel="logo"/>
                         </div>
                     </div>
                 </div>

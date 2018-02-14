@@ -1,5 +1,49 @@
 import fetch from "cross-fetch";
 
+export const onRequest = (request) =>{
+    return dispatch => {
+        fetch("http://localhost:5005/conversations/default/parse?q=" + request)
+            .then(res => {
+                if (res.status >= 400) {
+                    throw new Error("Bad response from server");
+                }
+                return res.json();
+            })
+            .then(response => {
+                dispatch(receivedData(response));
+            })
+            .catch(err => {
+                console.error(err);
+            });
+
+    };
+};
+
+const receivedData =(response)=>{
+    console.log(response);
+    let type="";
+    switch(response.tracker.latest_message.intent.name){
+        case "emailId":
+            type="email";
+            break;
+        case "technicalProblem":
+            type="technicalProblemDescription";
+            break;
+        case "accountProblem":
+            type="accountProblemDescription";
+            break;
+        case "billingProblem":
+            type="billingProblemDescription";
+            break;
+
+
+    }
+    return{
+        type:type,
+        payload:response
+    };
+};
+
 export const onOpen = () =>{
     return{
         type:"start"
@@ -30,39 +74,7 @@ export const onNotHelpful = () =>{
     };
 };
 
-export const onEmail = (customRequest) =>{
-    console.log("in action");
-    return dispatch => {
-        fetch("http://localhost:5005/conversations/default/parse?q=" + customRequest)
-            .then(res => {
-                if (res.status >= 400) {
-                    throw new Error("Bad response from server");
-                }
-                return res.json();
-            })
-            .then(response => {
-                dispatch(receivedData(response));
-            })
-            .catch(err => {
-                console.error(err);
-            });
 
-    };
-};
-
-const receivedData =(response)=>{
-    let type="";
-    switch(response.tracker.latest_message.intent.name){
-        case "emailId":
-            type="email";
-        case "problemDescription":
-            type="problemDescription"
-    }
-    return{
-        type:type,
-        payload:response
-    };
-};
 
 export const onMainMenu = () =>{
     return{

@@ -2,7 +2,7 @@ import React from "react";
 import {Component} from "react";
 import {connect} from "react-redux";
 import {changeStatusToClose} from "../actions/status";
-import {onEmail} from "../actions/chatMessages";
+import {onRequest} from "../actions/chatMessages";
 import Chat from "./Chat"
 
 class ChatArea extends Component {
@@ -72,7 +72,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
         statusUpdateToClose : () => dispatch(changeStatusToClose()),
-        fetchResponse: (customRequest) => dispatch(onEmail(customRequest)),
+        fetchResponse: (request) => dispatch(onRequest(request)),
     }
 };
 

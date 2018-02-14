@@ -4399,7 +4399,7 @@ body {
 
 .action-container {
   height: 78vh; }
-  .action-container img {
+  .action-container chat-icon {
     margin-top: 19.5vh;
     height: 3em;
     padding: 1em; }
