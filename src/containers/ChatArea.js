@@ -4,8 +4,10 @@ import {connect} from "react-redux";
 import {changeStatusToClose} from "../actions/status";
 import {onRequest} from "../actions/chatMessages";
 import Chat from "./Chat"
+import closeLogo from "../assets/images/closeIcon.svg";
 
 class ChatArea extends Component {
+
     constructor(props) {
         super(props);
     };
@@ -21,7 +23,7 @@ class ChatArea extends Component {
                                 <p className="h6">
                                     Tina
                                 </p>
-                                <img className="figure-img img-fluid rounded chat-header__img" onClick={()=>this.props.statusUpdateToClose()} src={"./src/assets/images/closeIcon.svg"}/>
+                                <img className="figure-img img-fluid rounded chat-header__img" onClick={()=>this.props.statusUpdateToClose()} src={closeLogo}/>
                             </div>
                         </div>
                     </div>

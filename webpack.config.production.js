@@ -16,8 +16,7 @@ module.exports = {
         loaders:[
             {test:/\.jsx?$/, exclude:/node_modules/, loader:"babel-loader", query:{presets:["env","react"]}},
             {test:/\.css$/, loader:ExtractTextPlugin.extract("css-loader", "style-loader")},
-            {test:/\.(png|jpg|gif)$/, loader:"file-loader"},
-            {test:/\.svg$/, loader:"svg-loader"}
+            {test:/\.(png|jpg|gif|svg)$/, loader:"file-loader"}
         ]
     },
 
