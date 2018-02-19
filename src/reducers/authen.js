@@ -1,4 +1,4 @@
-export const authen = (state = {authenticated: false, getCredentials:false}, action)=>{
+export const authen = (state = {authenticated: false, credentials:false}, action)=>{
 
     switch(action.type){
         case 'login':
@@ -8,7 +8,7 @@ export const authen = (state = {authenticated: false, getCredentials:false}, act
             return Object.assign({}, state, {authenticated:false});
 
         case 'getCredentials':
-            return Object.assign({}, state, {getCredentials:true});
+            return Object.assign({}, state, {credentials:true});
 
         default:
             return state;

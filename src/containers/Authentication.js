@@ -26,7 +26,6 @@ class Authentication extends Component {
 const mapStateToProps = (state) => {
     return {
         authenticated: state.authen.authenticated,
-        credentials: state.authen.getCredentials
     };
 };
 

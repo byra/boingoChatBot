@@ -1,7 +1,7 @@
 import React from "react";
 import {Component} from "react";
 import Header from "./Header";
-import Body from "../containers/Body";
+import Body from "./Body";
 import Footer from "./Footer";
 
 class Layout extends Component {
@@ -14,17 +14,17 @@ class Layout extends Component {
         return (
             <div className="container-fluid layout-container">
                 <div className="row">
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-header">
+                    <div className="col layout-header">
                         <Header/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-body">
+                    <div className="col layout-body">
                         <Body/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-footer">
+                    <div className="col layout-footer">
                         <Footer/>
                     </div>
                 </div>

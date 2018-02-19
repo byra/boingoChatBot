@@ -4376,7 +4376,8 @@ body {
   padding: 0; }
 
 .header-container {
-  background: linear-gradient(to right, #005A74 0%, #006c8b 100%); }
+  background: linear-gradient(to right, #005A74 0%, #006c8b 100%);
+  height: 15vh; }
   .header-container .header-container__logo {
     padding-left: 3em; }
     .header-container .header-container__logo img {
@@ -4395,18 +4396,18 @@ body {
 
 .body-container {
   background: linear-gradient(to right, #00809c 0%, #00B7DF 100%);
-  height: 78vh; }
+  height: 80vh; }
 
 .action-container {
-  height: 78vh; }
+  height: 80vh; }
   .action-container img {
-    margin-top: 19.5vh;
+    margin-top: 20vh;
     height: 3em;
     padding: 1em; }
 
 .chat-container {
   z-index: 1050;
-  margin-top: 10.14vh; }
+  margin-top: 10.4vh; }
   .chat-container .chat-header {
     background-color: #006989;
     border-top-left-radius: 0.3em;
@@ -4420,7 +4421,7 @@ body {
     background-color: #FFFFFF;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 56.16vh; }
+    height: 57.6vh; }
     .chat-container .chat-body .chat-body__msg--div {
       padding: 0.3em; }
     .chat-container .chat-body .chat-body__msg {
@@ -4441,7 +4442,7 @@ body {
 .login-container {
   z-index: 1070;
   background-color: cyan;
-  margin-top: 10.14vh; }
+  margin-top: 10.4vh; }
 
 .footer-container {
   background: linear-gradient(to right, #00b7df 0%, #00809c 100%); }

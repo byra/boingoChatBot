@@ -1,24 +1,19 @@
 import React from "react";
 import {Component} from "react";
 
-class Footer extends Component{
-    constructor(props){
+class Footer extends Component {
+    constructor(props) {
         super(props);
     };
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="footer-container">
-                <div className="row">
-                    <div className="col">
-                        <div className="d-flex justify-content-center">
-                            <p>
-                                Intellectual Property of IntelliSoft Technologies, Inc.
-                            </p>
-                        </div>
-                    </div>
+                <div className="d-flex justify-content-center">
+                    <p>
+                        Intellectual Property of IntelliSoft Technologies, Inc.
+                    </p>
                 </div>
-
             </div>
         );
     };
