@@ -73,3 +73,9 @@ $height: 78vh;
     };
   };
 };
+
+.login-container{
+  z-index: $zindex-tooltip;
+  background-color: $background-color * 1.5;
+  margin-top: $height * .13;
+}

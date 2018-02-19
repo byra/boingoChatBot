@@ -1,7 +1,7 @@
 import React from "react";
 import {Component} from "react";
 import Header from "./Header";
-import Body from "../components/Body";
+import Body from "../containers/Body";
 import Footer from "./Footer";
 
 class Layout extends Component {

@@ -2,6 +2,10 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpackDashboard = require('webpack-dashboard/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
 
 module.exports = {
 
@@ -21,6 +25,10 @@ module.exports = {
     },
 
     plugins:[
+        new webpackDashboard(),
+        new BundleAnalyzerPlugin(),
+        new FriendlyErrorsWebpackPlugin(),
+        new DuplicatePackageCheckerPlugin(),
         new HtmlWebpackPlugin({filename:"index.html", template:"./src/assets/index.html"}),
         new ExtractTextPlugin("style.css"),
         new webpack.optimize.UglifyJsPlugin({ mangle: false })

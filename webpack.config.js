@@ -1,5 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpackDashboard = require('webpack-dashboard/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+
+
+
+
 
 module.exports = {
 
@@ -12,6 +20,7 @@ module.exports = {
     },
 
     devServer: {
+        quiet: true,
         port: 6060
     },
 
@@ -24,6 +33,10 @@ module.exports = {
     },
 
     plugins: [
+        new webpackDashboard(),
+        new BundleAnalyzerPlugin(),
+        new FriendlyErrorsWebpackPlugin(),
+        new DuplicatePackageCheckerPlugin(),
         new HtmlWebpackPlugin({filename: "index.html", template: "./src/assets/index.html"})
     ]
 };

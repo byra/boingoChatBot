@@ -1,5 +1,6 @@
 import React from "react";
 import {Component} from "react";
+import Authentication from "../containers/Authentication"
 import dmLogo from "../assets/images/datamorphixLogo.png"
 
 class Header extends Component {
@@ -21,7 +22,7 @@ class Header extends Component {
                     <div className="d-flex flex-column header-container__title">
                         <div className="p-2">
                             <div className="d-flex justify-content-center">
-                                <a className="navbar-brand" href="#">
+                                <a className="navbar-brand" href="http://www.datamorphix.com">
                                     <p className="h1">Datamorphix Converse Bot</p>
                                 </a>
                             </div>
@@ -36,12 +37,13 @@ class Header extends Component {
                     </div>
 
                     <div className="align-self-center header-container__button">
-                        <button className="btn btn-info">Learn more</button>
+                        <Authentication/>
                     </div>
                 </div>
             </div>
         );
     };
 }
+
 
 export default Header;
