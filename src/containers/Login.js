@@ -66,7 +66,7 @@ class Login extends Component {
                                                }
                                         />
                                     </div>
-                                    <div className="d-flex justify-content-between m-3">
+                                    <div className="d-flex justify-content-between px-3 pb-3">
                                         <button type="submit" className="p-2 btn btn-info mr-1">Submit</button>
                                         <button type="reset" className="p-2 btn btn-info">Reset</button>
                                     </div>
