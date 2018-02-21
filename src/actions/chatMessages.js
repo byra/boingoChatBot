@@ -2,7 +2,7 @@ import fetch from "cross-fetch";
 
 export const onRequest = (request) =>{
     return dispatch => {
-        fetch("http://localhost:5005/conversations/default/parse?q=" + request)
+        fetch("http://54.213.230.201:5005/conversations/default/parse?q=" + request)
             .then(res => {
                 if (res.status >= 400) {
                     throw new Error("Bad response from server");
