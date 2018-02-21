@@ -13,22 +13,22 @@ class Header extends Component {
         return (
             <div className="header-container">
                 <div className="d-flex  justify-content-between">
-                    <div className="align-self-center header-container__logo">
+                    <div className="align-self-center ml-4">
                         <img src={dmLogo} alt="logo"/>
                     </div>
                     <div className="d-flex flex-column header-container__title">
                         <div className="d-flex justify-content-center">
                             <a className="navbar-brand" href="http://www.datamorphix.com">
-                                <p className="h1">Datamorphix Converse Bot</p>
+                                <p className="h1 m-0 p-0">Datamorphix Converse Bot</p>
                             </a>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <p className="h5">
+                            <p className="h5 m-0">
                                 Welcome to the Datamorphix Converse Bot. Your assistant Tina is here to help.
                             </p>
                         </div>
                     </div>
-                    <div className="align-self-center header-container__button">
+                    <div className="align-self-center mr-5">
                         <Authentication/>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ $background-color: #00B7DF;
 $chat-body-color: #FFFFFF;
 $chat-text-bg-color: #F1F0F0;
 
-$height: 80vh;
+$height: 84vh;
 
 .body-container{
   background: linear-gradient(to right, $background-color *.7  0%, $background-color   100%);
@@ -16,13 +16,12 @@ $height: 80vh;
   img{
     margin-top: $height * .25;
     height: 3em;
-    padding: 1em;
   };
 };
 
 .chat-container{
   z-index: $zindex-modal;
-  margin-top: $height * .13;
+  margin-top: $height * .135;
 
   .chat-header{
     background-color: #006989;
@@ -48,7 +47,7 @@ $height: 80vh;
 
 
     .chat-body__msg--div{
-      padding: 0.3em;
+      padding: 0.15em;
     }
     .chat-body__msg{
       background-color: $chat-text-bg-color;
@@ -75,7 +74,41 @@ $height: 80vh;
 };
 
 .login-container{
-  z-index: $zindex-tooltip;
-  background-color: $background-color * 1.5;
-  margin-top: $height * .13;
-}
+  z-index: $zindex-modal;
+  margin-top: $height * .135;
+
+  .login-header{
+    background-color: $background-color * .6;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+
+    .login-header__img{
+      height: 1em;
+      padding: 1em;
+    };
+
+    p{
+      padding-left: 1em;
+
+    }
+  };
+
+  .login-body{
+    background-color: $chat-body-color;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: $height * .38;
+
+    input{
+      width: 94%;
+    };
+
+    .login-body__msg--time{
+      background-color: $chat-body-color;
+    };
+
+  };
+
+};

@@ -4,7 +4,7 @@
   "description": "demo project for support chat bot",
   "main": "./src/configurations/index.js",
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server --hot --inline --debug --devtool eval --open",
+    "start": "webpack-dashboard -- webpack-dev-server --hot --inline --debug --devtool eval --open --colors --no-info",
     "build": "webpack-dashboard -- webpack --config webpack.config.production.js --optimize-minimize --progress"
   },
   "author": "Manikanta Mahesh Byra",

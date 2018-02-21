@@ -1,5 +1,6 @@
 import React from "react";
 import {Component} from "react";
+import {connect} from "react-redux";
 import Bot from "../containers/Bot";
 import Login from "../containers/Login";
 import SideNavBar from "../components/SideNavBar"
@@ -11,22 +12,52 @@ class Body extends Component {
     };
 
     render() {
-        return (
-            <div className="body-container">
-                <div className="row">
-                    <div className="col-md-3 col-xl-3">
-                        <SideNavBar/>
-                    </div>
-                    <div className="col-md-4 col-xl-4">
-                        <Login/>
-                    </div>
-                    <div className="col-md-4 col-md-4">
-                        <Bot/>
+        if(this.props.isFormOpen){
+            return (
+                <div className="body-container">
+                    <div className="row">
+                        <div className="col-md-3 col-xl-3">
+                            <SideNavBar/>
+                        </div>
+                        <div className="col-md-7 col-xl-7">
+                            <Login/>
+                        </div>
+                        <div className="col-md-1 col-md-1">
+                            <Bot/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        else{
+            return (
+                <div className="body-container">
+                    <div className="row">
+                        <div className="col-md-3 col-xl-3">
+                            <SideNavBar/>
+                        </div>
+                        <div className="col-md-3 col-xl-3">
+                        </div>
+                        <div className="col-md-5 col-md-5">
+                            <Bot/>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     };
 }
 
-export default Body;
+const mapStateToProps = state =>{
+    return{
+        isFormOpen:state.status.formStatus,
+    };
+};
+
+const mapDispatchToProps = dispatch =>{
+    return{
+
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Body);

@@ -11,7 +11,7 @@ class Authentication extends Component {
     render() {
         if (!this.props.authenticated){
             return (
-                <button className="btn btn-info" onClick={() => this.props.getCredentials()}>Log In</button>
+                <button className="btn btn-info" onClick={() => this.props.getCredentials()} data-toggle="modal" data-target="#exampleModalCenter">Log In</button>
 
             );
         }
@@ -25,7 +25,7 @@ class Authentication extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authenticated: state.authen.authenticated,
+        authenticated: state.status.authenticated,
     };
 };
 

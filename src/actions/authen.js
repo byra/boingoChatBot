@@ -16,3 +16,9 @@ export const getCredentials = () =>{
       type:"getCredentials"
     };
 };
+
+export const statusUpdateToLoginClose = () =>{
+    return{
+        type:"closeLogin"
+    };
+};

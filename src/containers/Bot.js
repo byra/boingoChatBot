@@ -23,7 +23,6 @@ class Bot extends Component {
                 </div>
             );
         }
-
     };
 }
 

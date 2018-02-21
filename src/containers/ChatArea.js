@@ -17,7 +17,7 @@ class ChatArea extends Component {
         return (
             <div className="chat-container">
                 <div className="row justify-content-start">
-                    <div className="col-lg-11 col-md-11 col-sm-11">
+                    <div className="col">
                         <div className="chat-header">
                             <div className="d-flex justify-content-between">
                                 <p className="h6">
@@ -29,14 +29,14 @@ class ChatArea extends Component {
                     </div>
                 </div>
                 <div className="row justify-content-start">
-                    <div className="col-lg-11 col-md-11 col-sm-11">
+                    <div className="col">
                         <div className="chat-body">
                             <Chat/>
                         </div>
                     </div>
                 </div>
                 <div className="row justify-content-start">
-                    <div className="col-lg-11 col-md-11 col-sm-11">
+                    <div className="col">
                         <div className="chat-footer">
                             <div className="d-flex justify-content-between">
                                 <div className="input-group input-group-lg">
