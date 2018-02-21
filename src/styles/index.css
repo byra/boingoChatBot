@@ -4447,8 +4447,7 @@ body {
     background-color: #FFFFFF;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
-    overflow-x: hidden;
-    height: 31.92vh; }
+    height: 31.08vh; }
     .login-container .login-body input {
       width: 94%; }
     .login-container .login-body .login-body__msg--time {

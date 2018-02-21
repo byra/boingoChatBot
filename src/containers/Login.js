@@ -39,7 +39,7 @@ class Login extends Component {
                         <div className="col-8">
                             <div className="login-body">
                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group m-3">
+                                    <div className="form-group px-3 pt-3">
                                         <label htmlFor="exampleInputEmail1">Email address</label>
                                         <input type="email" className="form-control form-control-lg form-padding"
                                                id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -55,7 +55,7 @@ class Login extends Component {
                                             anyone else.
                                         </small>
                                     </div>
-                                    <div className="form-group m-3">
+                                    <div className="form-group px-3">
                                         <label htmlFor="exampleInputPassword1">Password</label>
                                         <input type="password" className="form-control form-control-lg form-padding"
                                                id="exampleInputPassword1" placeholder="Password" required
