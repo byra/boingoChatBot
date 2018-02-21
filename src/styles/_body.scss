@@ -97,8 +97,8 @@ $height: 84vh;
     background-color: $chat-body-color;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    //overflow-y: scroll;
+    //overflow-x: hidden;
     height: $height * .38;
 
     input{
