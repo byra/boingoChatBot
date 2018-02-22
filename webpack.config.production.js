@@ -17,11 +17,11 @@ module.exports = {
     },
 
     module:{
-        loaders:[
-            {test:/\.jsx?$/, exclude:/node_modules/, loader:"babel-loader", query:{presets:["env","react"]}},
-            {test: /\.scss$/, loader: "style-loader!css-loader!sass-loader"},
-            {test:/\.css$/, loader:ExtractTextPlugin.extract("css-loader", "style-loader")},
-            {test:/\.(png|jpg|gif|svg)$/, loader:"file-loader"}
+        rules:[
+            {test:/\.jsx?$/, exclude:/node_modules/, use:"babel-loader", options:{presets:["env","react"]}},
+            {test: /\.scss$/, use: ["style-loader","css-loader","sass-loader"]},
+            {test:/\.css$/, use:ExtractTextPlugin.extract("css-loader", "style-loader")},
+            {test:/\.(png|jpg|gif|svg)$/, use:"file-loader"}
         ]
     },
 
