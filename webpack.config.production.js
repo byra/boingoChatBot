@@ -18,10 +18,10 @@ module.exports = {
 
     module:{
         rules:[
-            {test:/\.jsx?$/, exclude:/node_modules/, use:"babel-loader", options:{presets:["env","react"]}},
-            {test: /\.scss$/, use: ["style-loader","css-loader","sass-loader"]},
+            {test: /\.jsx?$/, exclude: /node_modules/, use: [{ loader: "babel-loader" ,options: {presets: ["env", "react"]}}]},
+            {test: /\.scss$/, use: [{ loader:"style-loader"},{ loader:"css-loader", options: {modules: true}},{ loader:"sass-loader"}]},
             {test:/\.css$/, use:ExtractTextPlugin.extract("css-loader", "style-loader")},
-            {test:/\.(png|jpg|gif|svg)$/, use:"file-loader"}
+            {test: /\.(png|jpg|gif|svg)$/, use: [{ loader:"file-loader"}]}
         ]
     },
 

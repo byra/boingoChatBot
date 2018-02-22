@@ -11,7 +11,9 @@ const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack
 
 module.exports = {
 
-    entry: "./src/configurations/index.js",
+    entry:{
+        main: "./src/configurations/index.js"
+    },
 
     output: {
         path: path.join(__dirname, "./dist"),
@@ -26,10 +28,10 @@ module.exports = {
 
     module: {
         rules: [
-            {test: /\.jsx?$/, exclude: /node_modules/, use: "babel-loader", options: {presets: ["env", "react"]}},
-            {test: /\.scss$/, use: ["style-loader","css-loader","sass-loader"]},
-            // {test: /\.css$/, use: ["style-loader","css-loader"]},
-            {test: /\.(png|jpg|gif|svg)$/, use: "file-loader"}
+            {test: /\.jsx?$/, exclude: /node_modules/, use: [{ loader: "babel-loader" ,options: {presets: ["env", "react"]}}]},
+            {test: /\.scss$/, use: [{ loader:"style-loader"},{ loader:"css-loader", options: {modules: true}},{ loader:"sass-loader"}]},
+            {test: /\.css$/, use: [{ loader:"style-loader"},{ loader:"css-loader"}]},
+            {test: /\.(png|jpg|gif|svg)$/, use: [{ loader:"file-loader"}]}
         ]
     },
 
