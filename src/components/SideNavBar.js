@@ -7,10 +7,38 @@ class SideNavBar extends Component{
     };
 
     render(){
-      return(
-          <div>
-          </div>
-      );
+      // return(
+      //       <div className="login-container">
+      //               <div className="|">
+      //                   <div className="col-18">
+      //                       <div className="login-header">
+      //                           <div className="">
+      //                           <button className="btn btn-info"  onClick={() => this.props.getCredentials()} data-toggle="modal" data-target="#exampleModalCenter">Training</button>
+
+  
+      //                     </div>
+      //                       </div></div>
+      //                   </div>
+      //               </div>
+      // );
+		return(
+				<nav id="navbar-example3" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="nav nav-pills flex-column">
+    <a class="nav-link" href="#item-1">Item 1</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+      <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+    </nav>
+    <a class="nav-link" href="#item-2">Item2</a>
+    <a class="nav-link" href="#item-3">Item3</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+      <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+    </nav>
+  </nav>
+</nav>
+			);
     };
 }
 
