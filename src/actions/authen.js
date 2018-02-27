@@ -56,3 +56,8 @@ const receivedData = (response) => {
         };
     }
 };
+export const botTrainingForm = () =>{
+    return{
+        type:"botTrainingForm"
+    };
+};

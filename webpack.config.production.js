@@ -19,7 +19,7 @@ module.exports = {
     module:{
         rules:[
             {test: /\.jsx?$/, exclude: /node_modules/, use: [{ loader: "babel-loader" ,options: {presets: ["env", "react"]}}]},
-            {test: /\.scss$/, use: [{ loader:"style-loader"},{ loader:"css-loader", options: {modules: true}},{ loader:"sass-loader"}]},
+            {test: /\.scss$/, use: [{ loader:"style-loader"},{ loader:"css-loader", options: {modules: true}},{ loader:"sass-loader", options: {modules: true}}]},
             {test:/\.css$/, use:ExtractTextPlugin.extract("css-loader", "style-loader")},
             {test: /\.(png|jpg|gif|svg)$/, use: [{ loader:"file-loader"}]}
         ]

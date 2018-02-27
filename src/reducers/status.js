@@ -14,10 +14,14 @@ export const status = (state = {}, action)=>{
             return Object.assign({}, state, {authenticated:false});
 
         case 'getCredentials':
-            return Object.assign({}, state, {credentials:true, formStatus:true, gate:false});
+            return Object.assign({}, state, {credentials:true, formStatus:true,formBotStatus:false, gate:false});
 
         case "closeLogin":
             return Object.assign({}, state, {credentials:false, formStatus:false, gate:false});
+
+        case "botTrainingForm":
+            return Object.assign({}, state, {formStatus:true, gate:false, formBotStatus:true, credentials:false,items: [1, 2, 3]});
+
 
         default:
             return state;

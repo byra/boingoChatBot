@@ -23,7 +23,7 @@ class ChatArea extends Component {
                                 <p className="h6">
                                     Tina
                                 </p>
-                                <img className="figure-img img-fluid rounded chat-header__img" onClick={()=>this.props.statusUpdateToClose()} src={closeLogo}/>
+                                <img className="figure-img img-fluid rounded chat-header__img cursor" onClick={()=>this.props.statusUpdateToClose()} src={closeLogo}/>
                             </div>
                         </div>
                     </div>
