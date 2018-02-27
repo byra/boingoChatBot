@@ -11,7 +11,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="header-container">
+            <div className="header-container navbar-default navbar-fixed-top ">
                 <div className="d-flex  justify-content-between">
                     <div className="align-self-center ml-4">
                         <img src={dmLogo} alt="logo"/>

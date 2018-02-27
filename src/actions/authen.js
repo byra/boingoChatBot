@@ -22,3 +22,9 @@ export const statusUpdateToLoginClose = () =>{
         type:"closeLogin"
     };
 };
+
+export const botTrainingForm = () =>{
+    return{
+        type:"botTrainingForm"
+    };
+};

@@ -29,7 +29,7 @@ class Login extends Component {
                                     <p className="h6">
                                         Login
                                     </p>
-                                    <img className="figure-img img-fluid rounded login-header__img"
+                                    <img className="figure-img img-fluid rounded login-header__img cursor"
                                          onClick={() => this.props.statusUpdateToLoginClose()} src={closeLogo}/>
                                 </div>
                             </div>

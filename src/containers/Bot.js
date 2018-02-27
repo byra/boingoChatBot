@@ -17,7 +17,7 @@ class Bot extends Component {
         else {
             return (
                 <div className="d-flex justify-content-end">
-                    <div className="action-container">
+                    <div className="action-container cursor">
                         <img src={messageLogo} onClick={() => this.props.statusUpdateToOpen()}/>
                     </div>
                 </div>

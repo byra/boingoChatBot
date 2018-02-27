@@ -4426,7 +4426,7 @@ mark,
 body {
   margin: 0;
   overflow-x: hidden;
-  overflow-y: hidden; }
+  overflow-y: auto; }
 
 .layout-container {
   padding: 0;
@@ -4449,7 +4449,9 @@ body {
 
 .body-container {
   background: linear-gradient(to right, #00809c 0%, #00B7DF 100%);
-  height: 84vh; }
+  height: 84vh;
+  overflow: auto;
+  overflow-x:hidden; }
 
 .action-container {
   height: 84vh; }
@@ -4493,7 +4495,8 @@ body {
 
 .login-container {
   z-index: 1050;
-  margin-top: 11.34vh; }
+  margin-top: 11.34vh;
+   }
   .login-container .login-header {
     background-color: #006e86;
     border-top-left-radius: 0.3em;
@@ -4516,3 +4519,110 @@ body {
   background: linear-gradient(to right, #00b7df 0%, #00809c 100%); }
 
 /*# sourceMappingURL=index.css.map */
+
+
+.sidenavdiv{
+  width:15em;
+  height: 22em;margin-left: 3em;
+  border-radius:.5em;
+  margin-left: 3em;
+  margin-bottom: 3em;
+  margin-top:6em;
+  background-color: #005f7b;
+}
+
+.sidenavdiv-container {
+  z-index: 1050;
+  margin-top: 11.34vh;
+   }
+  .sidenavdiv-container .sidenavdiv-header {
+    background-color: #006e86;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em; }
+    .sidenavdiv-container .sidenavdiv-header .sidenavdiv-header__img {
+      height: 1em;
+      padding: 1em; }
+    .sidenavdiv-container .sidenavdiv-header p {
+      padding-left: 1em; }
+  .sidenavdiv-container .sidenavdiv-body {
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em; }
+   /* .sidenavdiv-container .sidenavdiv-body input {
+      width: 94%; }*/
+    .sidenavdiv-container .sidenavdiv-body .sidenavdiv-body__msg--time {
+      background-color: #FFFFFF; }
+
+  .sidenavbtn{
+    width: 10em;
+    margin-left: 2em;
+    margin-top: 2em;
+  }
+
+  .poptextbox{
+    height: 1em;
+    width: 10em;
+  }
+.popuptextalighlabel{  
+    position:  relative;
+    left:  20em;
+    top: -3.6em;
+}
+.popuptextalightextbox{  
+    position:  relative;
+    left:  16em;
+    top: -2.9em;
+}
+.popuptextalighfull{
+  height: 1em;
+  width:87%;
+}
+.cursor{
+  cursor:pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.List {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 280px;
+}
+
+.ListItem {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #521751;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ListItem:hover,
+.ListItem:active {
+    background-color: #ccc;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}

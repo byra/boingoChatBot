@@ -3,6 +3,7 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import Bot from "../containers/Bot";
 import Login from "../containers/Login";
+import BotTraining from "../containers/BotTraining";
 import SideNavBar from "../components/SideNavBar"
 
 class Body extends Component {
@@ -21,6 +22,7 @@ class Body extends Component {
                         </div>
                         <div className="col-md-7 col-xl-7">
                             <Login/>
+                            <BotTraining/>
                         </div>
                         <div className="col-md-1 col-md-1">
                             <Bot/>
