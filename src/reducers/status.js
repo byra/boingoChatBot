@@ -8,7 +8,7 @@ export const status = (state = {}, action)=>{
             return Object.assign({}, state, {gate:false});
 
         case 'login':
-            return Object.assign({}, state, {authenticated:true});
+            return Object.assign({}, state, {authenticated:true, credentials:false, formStatus:false, gate:false});
 
         case 'logout':
             return Object.assign({}, state, {authenticated:false});

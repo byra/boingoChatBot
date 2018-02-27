@@ -20,7 +20,6 @@ export const onRequest = (request) =>{
 };
 
 const receivedData =(response)=>{
-    console.log(response);
     let type="";
     switch(response.tracker.latest_message.intent.name){
         case "emailId":

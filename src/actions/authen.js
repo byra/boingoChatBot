@@ -1,24 +1,58 @@
-export const changeStatusToLogin = () =>{
-    return{
-        type:"login"
+import fetch from "cross-fetch";
+
+export const changeStatusToLogin = () => {
+    return {
+        type: "login"
     };
 };
 
-export const changeStatusToLogout = () =>{
-    return{
-        type:"logout"
+export const changeStatusToLogout = () => {
+    return {
+        type: "logout"
     };
 };
 
 
-export const getCredentials = () =>{
-    return{
-      type:"getCredentials"
+export const getCredentials = () => {
+    return {
+        type: "getCredentials"
     };
 };
 
-export const statusUpdateToLoginClose = () =>{
-    return{
-        type:"closeLogin"
+export const statusUpdateToLoginClose = () => {
+    return {
+        type: "closeLogin"
     };
+};
+
+export const verifyCredentials = (id, code) => {
+    return dispatch => {
+        fetch('http://54.213.230.201:3030/login?email='+ id + '&password=' + code)
+            .then(res => {
+                if (res.status >= 400) {
+                    throw new Error("Bad response from server");
+                }
+                return res.json();
+            })
+            .then(response => {
+                dispatch(receivedData(response));
+            })
+            .catch(err => {
+                console.error(err);
+            });
+
+    };
+};
+
+const receivedData = (response) => {
+    if(response.login){
+        return {
+            type:"login"
+        };
+    }
+    else{
+        return{
+            type:"closeLogin"
+        };
+    }
 };

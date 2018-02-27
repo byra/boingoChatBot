@@ -3,21 +3,33 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import closeLogo from "../assets/images/closeIcon.svg";
 import {statusUpdateToLoginClose} from "../actions/authen"
+import {verifyCredentials} from "../actions/authen"
 
 
 class Login extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {email:"", password:""}
-    };
+        this.state = {email:'', password:''};
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
     }
 
+    handleEmailChange(event) {
+        this.setState({email: event.target.value});
+    }
 
+    handlePasswordChange(event) {
+        this.setState({password: event.target.value});
+    }
+
+    handleSubmit(event){
+        event.preventDefault();
+        this.props.verifyCredentials(this.state.email, this.state.password);
+
+    }
     render() {
         if (!this.props.authenticated && this.props.credentials) {
             return (
@@ -42,13 +54,9 @@ class Login extends Component {
                                     <div className="form-group px-3 pt-3">
                                         <label htmlFor="exampleInputEmail1">Email address</label>
                                         <input type="email" className="form-control form-control-lg form-padding"
-                                               id="exampleInputEmail1" aria-describedby="emailHelp"
+                                               aria-describedby="emailHelp"
                                                placeholder="Enter email" required
-                                               ref={email =>
-                                               {
-                                                   this.state.email = email
-                                               }
-                                               }
+                                               value={this.state.email} onChange={this.handleEmailChange}
                                         />
                                         <small id="emailHelp" className="form-text text-muted">We'll never share your
                                             email with
@@ -58,12 +66,8 @@ class Login extends Component {
                                     <div className="form-group px-3">
                                         <label htmlFor="exampleInputPassword1">Password</label>
                                         <input type="password" className="form-control form-control-lg form-padding"
-                                               id="exampleInputPassword1" placeholder="Password" required
-                                               ref={password =>
-                                               {
-                                                   this.state.password = password
-                                               }
-                                               }
+                                               placeholder="Password" required
+                                               value={this.state.password} onChange={this.handlePasswordChange}
                                         />
                                     </div>
                                     <div className="d-flex justify-content-between px-3 pb-3">
@@ -96,7 +100,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        statusUpdateToLoginClose: ()=>dispatch(statusUpdateToLoginClose())
+        statusUpdateToLoginClose: ()=>dispatch(statusUpdateToLoginClose()),
+        verifyCredentials: (email, password)=>dispatch(verifyCredentials(email, password))
     };
 };
 
