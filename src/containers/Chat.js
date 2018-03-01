@@ -2,7 +2,7 @@ import React from "react";
 import {Component} from "react";
 import {connect} from "react-redux";
 import {onOpen} from "../actions/chatMessages";
-import Messages from "./Messages"
+import Messages from "./Messages";
 
 class Chat extends Component{
      constructor(props){

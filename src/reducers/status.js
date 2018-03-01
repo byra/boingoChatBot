@@ -20,7 +20,7 @@ export const status = (state = {}, action)=>{
             return Object.assign({}, state, {credentials:false, formStatus:false, gate:false});
 
         case "botTrainingForm":
-            return Object.assign({}, state, {formStatus:true, gate:false, formBotStatus:true, credentials:false,items: [1, 2, 3]});
+            return Object.assign({}, state, {formStatus:true, gate:false, formBotStatus:true, credentials:false});
 
 
         default:

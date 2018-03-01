@@ -2,8 +2,8 @@ import React from "react";
 import {Component} from "react";
 import {connect} from "react-redux";
 import closeLogo from "../assets/images/closeIcon.svg";
-import {statusUpdateToLoginClose} from "../actions/authen"
-import {verifyCredentials} from "../actions/authen"
+import {statusUpdateToLoginClose} from "../actions/authen";
+import {verifyCredentials} from "../actions/authen";
 
 
 class Login extends Component {
@@ -14,7 +14,6 @@ class Login extends Component {
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     handleEmailChange(event) {
@@ -28,7 +27,6 @@ class Login extends Component {
     handleSubmit(event){
         event.preventDefault();
         this.props.verifyCredentials(this.state.email, this.state.password);
-
     }
     render() {
         if (!this.props.authenticated && this.props.credentials) {

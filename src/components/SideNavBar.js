@@ -15,9 +15,9 @@ class SideNavBar extends Component {
               <div className="sidenavdiv btn-md ">
                 <div className="btn-sm btn-custom ">
                     <button className="btn btn-info sidenavbtn" onClick={() => this.props.botTrainingForm()} data-toggle="modal" data-target="#exampleModalCenter">Train BOT</button></div>
-                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" onClick={() => this.props.conversationtrainingform()} data-toggle="modal" data-target="#exampleModalCenter">Train Conversation</button></div>
-                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" onClick={() => this.props.deployingbot()} data-toggle="modal" data-target="#exampleModalCenter">Deploy BOT</button></div>
-                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" onClick={() => this.props.testingbot()} data-toggle="modal" data-target="#exampleModalCenter">Test BOT</button></div>
+                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" /*onClick={() => this.props.conversationtrainingform()}*/ data-toggle="modal" data-target="#exampleModalCenter">Train Conversation</button></div>
+                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" /*onClick={() => this.props.deployingbot()}*/ data-toggle="modal" data-target="#exampleModalCenter">Deploy BOT</button></div>
+                  <div className="btn-sm btn-custom ">  <button className="btn btn-info sidenavbtn" /*onClick={() => this.props.testingbot()}*/ data-toggle="modal" data-target="#exampleModalCenter">Test BOT</button></div>
 
               </div>
             );
