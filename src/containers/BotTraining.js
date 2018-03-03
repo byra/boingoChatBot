@@ -13,32 +13,32 @@ class BotTraining extends Component {
  
     constructor(props) {
         super(props);
-        this.state = {intent:"", intent_followup:"", intent_followup_response:"",text_id:'', textboxes:'', inputs: ['input-0'], shareholders: [{ name: '' }]};
-        this.handlefollowresponseChange = this.handlefollowresponseChange.bind(this);
+        this.state = {intent:"", intent_FollowUp:"", intent_FollowUp_Response:"",text_id:'', textboxes:''};
+        this.handleFollowResponseChange = this.handleFollowResponseChange.bind(this);
         this.handleIntentChange = this.handleIntentChange.bind(this);
-        this.handleIntentfollowChange = this.handleIntentfollowChange.bind(this);
-        this.handleSubmitintent = this.handleSubmitintent.bind(this);
-        this.handeladdIntentTextbox = this.handeladdIntentTextbox.bind(this);        
+        this.handleIntentFollowChange = this.handleIntentFollowChange.bind(this);
+        this.handleSubmitIntent = this.handleSubmitIntent.bind(this);
+        this.handleAddIntentTextbox = this.handleAddIntentTextbox.bind(this);        
     };
 
     handleIntentChange(event) {
         this.setState({intent: event.target.value});
     }
 
-    handleIntentfollowChange(event) {
-        this.setState({intent_followup: event.target.value});
+    handleIntentFollowChange(event) {
+        this.setState({intent_FollowUp: event.target.value});
     }
 
-    handlefollowresponseChange(event) {
-        this.setState({intent_followup_response: event.target.value});
+    handleFollowResponseChange(event) {
+        this.setState({intent_FollowUp_Response: event.target.value});
     }
 
-    handleSubmitintent(event){
+    handleSubmitIntent(event){
         event.preventDefault();      
     }
 
   
-    handeladdIntentTextbox(event){
+    handleAddIntentTextbox(event){
       //event.preventDefault();
       this.setState({text_id:v4()});
       this.props.addIntentTextbox(this.state.text_id);
@@ -67,7 +67,7 @@ class BotTraining extends Component {
                     <div className="row justify-content-start">
                         <div className="col-8">
                             <div className="sidenavdiv-body intentscroll">
-                                <form onSubmit={this.handleSubmitintent}>
+                                <form onSubmit={this.handleSubmitIntent}>
                                     <div className="form-group px-3 pt-3">
                                         <label htmlFor="exampleInputEmail1">Intent</label>
                                         <input type="text" className="popuptextalighfull form-control form-control-lg form-padding"
@@ -81,13 +81,13 @@ class BotTraining extends Component {
                                         <label htmlFor="exampleInputPassword1">Intent Followup</label>
                                         <input type="text" className="form-control form-control-lg form-padding poptextbox"
                                                id="exampleInputPassword1" placeholder="Intent Followup" required
-                                              value={this.state.intent_followup} onChange={this.handleIntentfollowChange}
+                                              value={this.state.intent_FollowUp} onChange={this.handleIntentFollowChange}
                                         />
                                     
                                         <label htmlFor="exampleInputPassword1"className={"popuptextalighlabel"}>Intent Followup Response</label>
                                         <input type="text" className="popuptextalightextbox form-control form-control-lg form-padding poptextbox"
                                                id="exampleInputPassword1" placeholder="Intent Followup Response" required
-                                               value={this.state.intent_followup_response} onChange={this.handlefollowresponseChange}
+                                               value={this.state.intent_FollowUp_Response} onChange={this.handleFollowResponseChange}
                                         />
                                     </div>
 
@@ -97,7 +97,7 @@ class BotTraining extends Component {
 
 
                                     <div className="d-flex justify-content-between px-5 pb-3">
-                                        <button type="button" className="p-2 btn btn-info mr-1" onClick={this.handeladdIntentTextbox}>ADD More</button>
+                                        <button type="button" className="p-2 btn btn-info mr-1" onClick={this.handleAddIntentTextbox}>ADD More</button>
                                         <button type="submit" className="p-2 btn btn-info">Save</button>
                                     </div>
                                 </form>

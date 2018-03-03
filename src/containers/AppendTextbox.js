@@ -11,29 +11,29 @@ class AppendTextbox extends Component{
 
 	constructor(props){
         super(props);
-        this.state = {FollowupIntentChange:"",FollowupResponseIntentChange:"", holder:{}};
+        this.state = {followupIntentChange:"",followupResponseIntentChange:"", holder:{}};
        /* this.handleFollowupIntentChange = this.handleFollowupIntentChange.bind(this);
         this.handleFollowupResponseIntentChange = this.handleFollowupResponseIntentChange.bind(this);*/
     };
 
    /* handleFollowupIntentChange(event,textbox_id) {
-        this.setState({FollowupIntentChange: event.target.value});
-        this.props.handleFollowupChange(textbox_id, this.state.FollowupIntentChange, this.state.FollowupResponseIntentChange);
+        this.setState({followupIntentChange: event.target.value});
+        this.props.handleFollowupChange(textbox_id, this.state.followupIntentChange, this.state.followupResponseIntentChange);
     }
 
     handleFollowupResponseIntentChange(event,textbox_id) {
-        this.setState({FollowupResponseIntentChange: event.target.value});
-        this.props.handleFollowupChange(textbox_id, this.state.FollowupResponseIntentChange, this.state.handleFollowupResponseIntentChange);
+        this.setState({followupResponseIntentChange: event.target.value});
+        this.props.handleFollowupChange(textbox_id, this.state.followupResponseIntentChange, this.state.handleFollowupResponseIntentChange);
     }
 
 
 */
 
     render(){
-    	console.log(this.props.textboxappend);
-    	if(this.props.textboxappend ) {
+    	console.log(this.props.textBoxAppend);
+    	if(this.props.textBoxAppend ) {
         return(
-        	<div>{this.props.textboxappend.map(followup_content =>(
+        	<div>{this.props.textBoxAppend.map(followup_content =>(
         		
         	<div className=" px-3" key={followup_content.idx}>
                 <label htmlFor="exampleInputPassword1">Intent Followup</label>
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
 	debugger;
 
     return {
-        textboxappend: state.status.indentTrain,
+        textBoxAppend: state.status.indentTrain,
     };
 };
 

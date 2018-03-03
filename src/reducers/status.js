@@ -31,7 +31,7 @@ export const status = (state = {}, action)=>{
             if(!temp.indentTrain){
                 temp.indentTrain = [];
             }
-            let indent = {idx:action.idx, followup_content:action.followup_content};
+            let indent = {idx:action.idx, followup_Content:action.followup_Content};
             temp.indentTrain.push(indent);
             return temp;
 
@@ -60,7 +60,7 @@ export const status_append = (state = [], action)=>{
                 ...state,
                     {
                         idx:action.idx,
-                        followup_content:action.followup_content                        
+                        followup_Content:action.followup_Content                        
                     }
             ];
 

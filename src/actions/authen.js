@@ -72,9 +72,9 @@ export const addIntentTextbox = (idx) =>{
     return{
         type:"addIntentTextbox",
         idx:idx,
-        followup_content:{
+        followup_Content:{
             idx:idx,
-            handlefollowintent:'',
+            handleFollowIntent:'',
             handleFollowResponseIntent:''
         }  
     };
@@ -91,9 +91,9 @@ export const handleFollowupChange = (idx, handleFollowupIntentChange, handleFoll
     return{
         type:"handleFollowupChange",
         idx:idx,
-        followup_content:{
+        followup_Content:{
             idx:idx,
-            handlefollowintent:handleFollowupIntentChange,
+            handleFollowIntent:handleFollowupIntentChange,
             handleFollowResponseIntent:handleFollowupResponseIntentChange
         }  
     };
