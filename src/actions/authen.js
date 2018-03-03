@@ -25,6 +25,12 @@ export const statusUpdateToLoginClose = () => {
     };
 };
 
+export const statusUpdateToCloseForm = () => {
+    return {
+        type: "closeForm"
+    };
+};
+
 export const verifyCredentials = (id, code) => {
     return dispatch => {
         fetch('http://54.213.230.201:3030/login?email='+ id + '&password=' + code)
@@ -60,4 +66,53 @@ export const botTrainingForm = () =>{
     return{
         type:"botTrainingForm"
     };
+};
+
+export const addIntentTextbox = (idx) =>{
+    return{
+        type:"addIntentTextbox",
+        idx:idx,
+        followup_content:{
+            idx:idx,
+            handlefollowintent:'',
+            handleFollowResponseIntent:''
+        }  
+    };
+};
+
+export const removeIntentTextbox = (idx) =>{
+    return{
+        type:"removeIntentTextbox",
+        idx:idx        
+    };
+};
+
+export const handleFollowupChange = (idx, handleFollowupIntentChange, handleFollowupResponseIntentChange) =>{
+    return{
+        type:"handleFollowupChange",
+        idx:idx,
+        followup_content:{
+            idx:idx,
+            handlefollowintent:handleFollowupIntentChange,
+            handleFollowResponseIntent:handleFollowupResponseIntentChange
+        }  
+    };
+};
+
+/*export const handleFollowupResponseIntentChange = (idx, handleFollowupResponseIntentChange) =>{
+    return{
+        type:"handleFollowupResponseIntentChange",
+        idx:idx,
+        followup_content{
+            handleFollowResponseIntent:handleFollowupResponseIntentChange
+        }        
+    };
+};
+*/
+
+
+export const formClose = () =>{
+    return{
+        type:"formClose"
+    }
 };
