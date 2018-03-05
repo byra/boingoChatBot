@@ -25,7 +25,7 @@ export const statusUpdateToLoginClose = () => {
     };
 };
 
-export const statusUpdateToCloseForm = () => {
+export const statusUpdateToEmptyForm = () => {
     return {
         type: "closeForm"
     };
@@ -46,7 +46,6 @@ export const verifyCredentials = (id, code) => {
             .catch(err => {
                 console.error(err);
             });
-
     };
 };
 
@@ -83,9 +82,17 @@ export const addIntentTextbox = (idx) =>{
 export const removeIntentTextbox = (idx) =>{
     return{
         type:"removeIntentTextbox",
-        idx:idx        
+        idx:idx
     };
 };
+
+export const handleIntentChange = (intent) =>{
+    return{
+        type:"handleIntentChange",
+        intent:intent
+    };
+};
+
 
 export const handleFollowupChange = (idx, handleFollowupIntentChange, handleFollowupResponseIntentChange) =>{
     return{
@@ -99,20 +106,12 @@ export const handleFollowupChange = (idx, handleFollowupIntentChange, handleFoll
     };
 };
 
-/*export const handleFollowupResponseIntentChange = (idx, handleFollowupResponseIntentChange) =>{
-    return{
-        type:"handleFollowupResponseIntentChange",
-        idx:idx,
-        followup_content{
-            handleFollowResponseIntent:handleFollowupResponseIntentChange
-        }        
-    };
-};
-*/
 
 
-export const formClose = () =>{
+
+export const saveIntentContent = (intentData) =>{
     return{
-        type:"formClose"
+        type:"saveIntentContent",
+        intentData:intentData
     }
 };

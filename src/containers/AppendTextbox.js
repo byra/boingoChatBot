@@ -11,53 +11,61 @@ class AppendTextbox extends Component{
 
 	constructor(props){
         super(props);
-        this.state = {followupIntentChange:"",followupResponseIntentChange:"", holder:{}};
-       /* this.handleFollowupIntentChange = this.handleFollowupIntentChange.bind(this);
-        this.handleFollowupResponseIntentChange = this.handleFollowupResponseIntentChange.bind(this);*/
+        this.state = {FollowupIntentChange:"",FollowupResponseIntentChange:""};
+        this.handleFollowupIntentChange = this.handleFollowupIntentChange.bind(this);
+        this.handleFollowupResponseIntentChange = this.handleFollowupResponseIntentChange.bind(this);
     };
 
-   /* handleFollowupIntentChange(event,textbox_id) {
-        this.setState({followupIntentChange: event.target.value});
-        this.props.handleFollowupChange(textbox_id, this.state.followupIntentChange, this.state.followupResponseIntentChange);
+    handleFollowupIntentChange(event) {
+        this.setState({FollowupIntentChange: event.target.value});
+        this.props.handleFollowupChange(textbox_id, this.state.FollowupIntentChange, this.state.FollowupResponseIntentChange);
     }
 
-    handleFollowupResponseIntentChange(event,textbox_id) {
-        this.setState({followupResponseIntentChange: event.target.value});
-        this.props.handleFollowupChange(textbox_id, this.state.followupResponseIntentChange, this.state.handleFollowupResponseIntentChange);
+    handleFollowupResponseIntentChange( event) {
+        this.setState({FollowupResponseIntentChange: event.target.value});
+        this.props.handleFollowupChange(textbox_id, this.state.FollowupResponseIntentChange, this.state.handleFollowupResponseIntentChange);
     }
 
 
-*/
+
+
 
     render(){
-    	console.log(this.props.textBoxAppend);
-    	if(this.props.textBoxAppend ) {
+
+    	if(this.props.textboxappend ) {
         return(
-        	<div>{this.props.textBoxAppend.map(followup_content =>(
+        	<div>{this.props.textboxappend.map(textbox =>(
         		
-        	<div className=" px-3" key={followup_content.idx}>
+        	<div className=" px-3" key={textbox.idx}>
                 <label htmlFor="exampleInputPassword1">Intent Followup</label>
                 <input type="text" className="form-control form-control-lg form-padding poptextbox"
-                       id="exampleInputPassword1" placeholder="Intent Followup" required/>            
+                       id="exampleInputPassword1" placeholder="Intent Followup" required
+                       value={this.state.FollowupIntentChange} onChange={this.handleFollowupIntentChange}
+                />            
                 <label htmlFor="exampleInputPassword1"className={"popuptextalighlabel"}>Intent Followup Response</label>
                 <input type="text" className="popuptextalightextbox form-control form-control-lg form-padding poptextbox"
-                       id="exampleInputPassword1" placeholder="Intent Followup Response" required/>
-                <button type="button" onClick={() => this.props.removeIntentTextbox(followup_content.idx)} className="removetextintent">-</button>
+                       id="exampleInputPassword1" placeholder="Intent Followup Response" required
+                       value={this.state.FollowupResponseIntentChange} onChange={this.handleFollowupResponseIntentChange}
+                       
+                />
+                <button type="button" onClick={() => this.props.removeIntentTextbox(textbox.idx)} className="removetextintent">-</button>
             </div>
              ))}</div>
         )}
         else{
-            return(null)
+            return(<div>
+
+            </div>)
         }
     };
 
 }
 
 const mapStateToProps = (state) => {
-	debugger;
-
     return {
-        textBoxAppend: state.status.indentTrain,
+        isformBOTStatus: state.status.formBotStatus,
+        textboxappend: state.status_append,
+       
     };
 };
 

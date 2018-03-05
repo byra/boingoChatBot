@@ -23,10 +23,12 @@ export const status = (state = {}, action)=>{
         case "botTrainingForm":
             return Object.assign({}, state, {formStatus:true, gate:false, formBotStatus:true, credentials:false});
 
-        case "formClose":
-            return Object.assign({}, state, {formStatus:false});
+
+
+        case "saveIntentContent":
+            return Object.assign({}, state, {intentDataTrain:action.intentData});
             
-        case "addIntentTextbox":
+        case "addIntentTextbox1":
             let temp = Object.assign({}, state);
             if(!temp.indentTrain){
                 temp.indentTrain = [];
@@ -35,7 +37,7 @@ export const status = (state = {}, action)=>{
             temp.indentTrain.push(indent);
             return temp;
 
-        case "removeIntentTextbox":
+        case "removeIntentTextbox1":
             const index = state.indentTrain.findIndex(i => i.idx === action.idx)
             let temp2 = Object.assign({}, state)
             temp2.indentTrain = temp2.indentTrain.slice(0, index) + temp2.indentTrain.slice(index+1)
@@ -53,49 +55,27 @@ export const status_append = (state = [], action)=>{
     switch(action.type){   
 
         case "closeForm":
-            return [ ]
+            return [ ];
     
-        case "addIntentTextbox1":           
+        case "addIntentTextbox":           
             return [
                 ...state,
                     {
                         idx:action.idx,
-                        followup_Content:action.followup_Content                        
+                        followup_Content:action.followup_Content                      
                     }
             ];
 
-        case "removeIntentTextbox1":{           
+        case "removeIntentTextbox":{           
             const index = state.findIndex(i => i.idx === action.idx)
                 return [
                     ...state.slice(0,index),
-                    ...state.slice(index+1)                   
+                    ...state.slice(index+1)            
                 ];
             }
 
 
-        case "handleFollowupChange":
-            //return Object.assign({}, state, {idx:[...state.idx, action.idx], formStatus:true, gate:false, formBotStatus:true, credentials:false});
-           /* state.followup_content[action.idx] = {
-                ...state.followup_content.action.idx,
-                ...action.followup_content
-              }
-              return {
-                ...state
-              }*/
-          
-         
-        /*case "handleFollowupResponseIntentChange":{
-            //return Object.assign({}, state, {idx:[...state.idx, action.idx], formStatus:true, gate:false, formBotStatus:true, credentials:false});
-            state.followup_content[action.idx] = {
-                ...state.followup_content[action.idx],
-                ...action.followup_content.handleFollowResponseIntent = action.followup_content.handleFollowResponseIntent
-            }
-            return {
-                ...state
-            }
-         
-        }*/
-
+        
 
         default:
             return state;
