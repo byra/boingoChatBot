@@ -36,10 +36,10 @@ class Login extends Component {
                         <div className="col-8">
                             <div className="login-header">
                                 <div className="d-flex justify-content-between">
-                                    <p className="h6">
+                                    <p className="h6 text-white">
                                         Login
                                     </p>
-                                    <img className="figure-img img-fluid rounded login-header__img cursor"
+                                    <img className="figure-img img-fluid rounded login-header__img cursor close"
                                          onClick={() => this.props.statusUpdateToLoginClose()} src={closeLogo}/>
                                 </div>
                             </div>
