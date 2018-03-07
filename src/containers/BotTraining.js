@@ -2,14 +2,13 @@ import React from "react";
 import {Component} from "react";
 import {connect} from "react-redux";
 import closeLogo from "../assets/images/closeIcon.svg";
-import {statusUpdateToLoginClose,statusUpdateToEmptyForm, saveIntentContent} from "../actions/authen";
+import {statusUpdateToLoginClose,statusUpdateToEmptyForm, saveIntentContent, statusUpdateToLoading} from "../actions/authen";
 import {addIntentTextbox, removeIntentTextbox, handleIntentChange} from "../actions/authen";
 import {v4} from "node-uuid";
-import AppendTextbox from "./AppendTextbox";
+import AppendIntentStatus from "./AppendIntentStatus";
 
 
 class BotTraining extends Component {
-
  
     constructor(props) {
         super(props);
@@ -38,7 +37,6 @@ class BotTraining extends Component {
     handleSubmitIntent(event){
         event.preventDefault();      
     }
-
   
     handelAddIntentTextbox(event){
       event.preventDefault();
@@ -51,28 +49,24 @@ class BotTraining extends Component {
       this.props.statusUpdateToEmptyForm();
     }  
 
-
     handleFollowupIntentChange(textbox_id,event) {
       console.log(this.state.followupIntentChange);
       const followupIntentChange = this.state.followupIntentChange;
       followupIntentChange[textbox_id+'1'] = event.target.value;
-      this.setState({ followupIntentChange: followupIntentChange });
-      
+      this.setState({ followupIntentChange: followupIntentChange });      
     }
 
     handleFollowupResponseIntentChange(textbox_id, event) {
       console.log(this.state.followupResponseIntentChange);
       const followupResponseIntentChange = this.state.followupResponseIntentChange;
       followupResponseIntentChange[textbox_id+'2'] = event.target.value;
-      this.setState({ followupResponseIntentChange: followupResponseIntentChange });
-      
+      this.setState({ followupResponseIntentChange: followupResponseIntentChange });      
     }
 
     saveTrainIntents(event){
+      /*this.props.statusUpdateToLoading();*/
       const div_Length = this.props.textboxAppend.length;
-      /*console.log(div_Length);*/
       const idx_Array=[];
-      
       const followupIntentChange_content=[];
       const followupResponseIntentChange_content=[];
       followupIntentChange_content.push(this.state.intent_Followup);
@@ -86,8 +80,7 @@ class BotTraining extends Component {
           followupIntentChange_content.push(this.state.followupIntentChange[idx_Array[i]+'1']);
           followupResponseIntentChange_content.push(this.state.followupResponseIntentChange[idx_Array[i]+'2']);
       };
-      /*console.log(followupIntentChange_content);
-      console.log(followupResponseIntentChange_content);*/
+
       this.state.followupIntentContent={
         intentValue:this.state.intent,        
         followupIntentChange_content:followupIntentChange_content,
@@ -108,6 +101,10 @@ class BotTraining extends Component {
       if(this.state.validData){
         console.log(this.state.followupIntentContent);
         this.props.saveIntentContent(this.state.followupIntentContent);
+        this.state.intent='';
+        this.state.intent_Followup='';
+        this.state.intent_Followup_Response='';
+        this.props.statusUpdateToEmptyForm();
       }      
     }
 
@@ -130,11 +127,13 @@ class BotTraining extends Component {
                             </div>
                         </div>
                     </div>
+                    
                     <div className="row justify-content-start">
                         <div className="col-8">
                             <div className="sidenavdiv-body intentscroll">
                                 <form onSubmit={this.handleSubmitIntent}>
                                     <div className="form-group px-3 pt-3 ">
+                                        <AppendIntentStatus/>
                                         <label htmlFor="exampleInputEmail1">Intent</label>
                                         <input type="text" className="popuptextalighfull form-control form-control-lg form-padding"
                                                id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -171,10 +170,11 @@ class BotTraining extends Component {
                                       </div>
                                        ))}</div> 
 
-                                    <div className="d-flex justify-content-between px-5 pb-3 position-relative">
+                                    <div className="d-flex justify-content-between px-5 pb-3 position-relative margin_div">
                                         <button type="button" className="p-2 btn btn-info mr-1" onClick={this.handelAddIntentTextbox}>ADD More</button>
-                                        <button type="submit" className="p-2 btn btn-info" onClick={this.saveTrainIntents}>Save</button>
-                                    </div>
+                                        <button type="submit" className="p-2 btn btn-info width_button" onClick={this.saveTrainIntents}>Save</button>
+                                        <button type="submit" className="p-2 btn btn-info width_button" onClick={this.handelCloseIntentDiv}>Cancel</button>
+                                    </div>                                    
                                 </form>
                             </div>
                         </div>
@@ -204,7 +204,8 @@ const mapDispatchToProps = (dispatch) => {
         statusUpdateToEmptyForm: ()=>dispatch(statusUpdateToEmptyForm()),
         addIntentTextbox: (textboxDiv_Id)=>dispatch(addIntentTextbox(textboxDiv_Id)),
         removeIntentTextbox: (textbox_id)=>dispatch(removeIntentTextbox(textbox_id)),
-        saveIntentContent: (followupIntentContent)=>dispatch(saveIntentContent(followupIntentContent))
+        saveIntentContent: (followupIntentContent)=>dispatch(saveIntentContent(followupIntentContent)),
+        statusUpdateToLoading: ()=>dispatch(statusUpdateToLoading())
     };
 };
 
