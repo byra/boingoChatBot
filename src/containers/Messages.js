@@ -3,6 +3,7 @@ import {Component} from "react";
 import {v4} from "node-uuid";
 import BotReply from "../components/chatTemplates/Bot/BotReply";
 import BotResponse from "../components/chatTemplates/Bot/BotResponse";
+import URL from "../components/chatTemplates/Bot/URL";
 import BotButtons from "./BotButtons"
 import UserResponse from "../components/chatTemplates/User/UserResponse";
 import CustomRequest from "../components/chatTemplates/User/CustomRequest";
@@ -30,6 +31,7 @@ class Messages extends Component {
                                 <CustomRequest userRequest ={text.customRequest}/>
                                 <BotReply reply={text.reply}/>
                                 <BotResponse response={text.response}/>
+                                <URL url={text.url}/>
                             </div>
                         )
                     )

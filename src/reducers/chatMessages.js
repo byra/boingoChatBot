@@ -1,150 +1,113 @@
 import {v4} from "node-uuid";
 
 export const chatMessages = (state = [], action)=>{
+    var userResponse = null;
+    var customRequest = null;
     switch(action.type){
         case "start":
+            userResponse = null;
+            customRequest = null;
             return [
                 ...state,
                     {
-                        userResponse:null,
-                        customRequest:null,
-                        url:[],
+                        userResponse:userResponse,
+                        customRequest:customRequest,
+                        url:null,
                         reply:["Welcome to Technical support! My name is Tina."],
                         response:"What can I help you with today?",
-                        buttons:["Technical Support","Manage Account","Billing Inquiry","Account Cancellation"]
+                        buttons:["Wifi Connection", "Account & Billing"]
                     }
             ];
 
-        case "technicalProblemDescription":
-            let userResponse = null;
-            let customRequest = null;
-            if(action.payload){
-                customRequest = action.payload.tracker.latest_message.text
-            }
-            else{
-                userResponse = "Technical Support"
+        case "Internet Connectivity Issues":
+            userResponse = null;
+            customRequest = null;
+            if(action.payload.tracker.latest_message.text === "Wifi Connection"){
+                userResponse = action.payload.tracker.latest_message.text;
             }
             return [
                 ...state,
                 {
                     userResponse:userResponse,
                     customRequest:customRequest,
-                    reply:["Thank you, I can definitely help you out with Technical Support."],
-                    response:"Please describe your issue or question or Select a topic from frequently asked questions which can answer your question",
-                    buttons:["Cannot Connect To Wifi","I am connected But Cannot React Internet", "Device Limit Reached", "Frequent Disconnects"]
+                    reply:["Thank you, I can definitely help you out with Internet Connectivity Issues."],
+                    response:"More to this can be found in this link below.",
+                    url:"http://goo.gl/DCF2qe",
+                    buttons:["Helpful","Not Helpful"]
                 }
 
             ];
-        case "cannotConnectToWifi":
+
+        case "Validation":
+            userResponse = null;
+            customRequest = null;
+            if(action.payload.tracker.latest_message.text === "Helpful"){
+                userResponse = action.payload.tracker.latest_message.text;
+            }else {
+                customRequest = action.payload.tracker.latest_message.text;
+            }
             return [
                 ...state,
                 {
-                    userResponse:"Cannot Connect To Wifi",
-                    customRequest:null,
-                    reply:[
-                        "Confirm your Wi-Fi is turned on. This option is usually located in the Settings menu.",
-                        "Confirm in your network settings that you are connected to a Boingo Network.",
-                        "Make sure your device is set to the correct time zone.",
-                        "Switch off your Wi-Fi, move approximately 50 feet and turn your Wi-Fi back on.",
-                        "Note: Some partner SSID networks do not support mobile devices.",
-                        "Boingo Wi-Finder App Users",
-                        "Check that your username and password are stored correctly in the Boingo app.",
-                        "If you updated your password online or with a Boingo Customer Care agent, you will need to manually update it within your app settings.",
-                        "Indicate your response whether this was helpful or not"
-                    ],
-                    response:null,
+                    userResponse:userResponse,
+                    customRequest:customRequest,
+                    reply:["We are happy to have solve your issue today. For other queries click on Main Menu."],
+                    response:"Have a great day!",
+                    url:null,
+                    buttons:["Main Menu"]
+                }
+            ];
+        case "Account & Billing":
+            userResponse = null;
+            customRequest = null;
+            if(action.payload.tracker.latest_message.text === "Account & Billing"){
+                userResponse = action.payload.tracker.latest_message.text;
+            }else {
+                customRequest = action.payload.tracker.latest_message.text;
+            }
+            return [
+                ...state,
+                {
+                    userResponse:userResponse,
+                    customRequest:customRequest,
+                    reply:["Thank you, I can definitely help you out with the Account."],
+                    response:"More to this can be found in this link below.",
+                    url:"http://goo.gl/7bFTUi",
                     buttons:["Helpful","Not Helpful"]
                 }
             ];
-        case "helpful":
+        case "Not Helpful":
+            userResponse = null;
+            customRequest = null;
+            if(action.payload.tracker.latest_message.text === "Not Helpful"){
+                userResponse = action.payload.tracker.latest_message.text;
+            }else {
+                customRequest = action.payload.tracker.latest_message.text;
+            }
             return [
                 ...state,
                 {
-                    userResponse:"Helpful",
-                    customRequest:null,
-                    reply:["We are happy to have solved your issue today. For answers to other queries please feel free to click Main Menu and explore\n" +
-                    "Have a great day!"],
-                    response:null,
-                    buttons:["Main Menu"]
-                }
-            ];
-        case "notHelpful":
-            return [
-                ...state,
-                {
-                    userResponse:"Not Helpful",
-                    customRequest:null,
-                    reply:["What is your email address? So that we can reply"],
-                    response:null,
-                    buttons:[]
-                }
-            ];
-        case "email":
-            return [
-                ...state,
-                {
-                    userResponse: null,
-                    customRequest:action.payload.tracker.latest_message.text,
-                    reply:["Please describe your issue in detail and we will reply within 1 business day."],
-                    response:null,
+                    userResponse:userResponse,
+                    customRequest:customRequest,
+                    reply:["What is your email address?"],
+                    response:"We will get back to you soon on this issue.",
+                    url:null,
                     buttons:[]
                 }
             ];
 
-        case "problemDescription":
+        case "EmailId":
+            userResponse = null;
+            customRequest  = action.payload.tracker.latest_message.text;
             return [
                 ...state,
                 {
-                    userResponse: null,
-                    customRequest:action.payload.tracker.latest_message.text,
-                    reply:["Thank you.", "Your request has been submitted and your Support Ticket Number is "+ v4(), "For Other Queries Please Click Main Menu Below"],
-                    response:null,
+                    userResponse:userResponse,
+                    customRequest:customRequest,
+                    reply:["Your request has been submitted with ticket number "+ v4()],
+                    response:"For other queries click on Main Menu.",
+                    url:null,
                     buttons:["Main Menu"]
-                }
-            ];
-        case "mainMenu":
-            return [
-                ...state,
-                {
-                    userResponse:"Main Menu",
-                    customRequest:null,
-                    reply:["Welcome to Technical support! My name is Tina."],
-                    response:"What can I help you with today?",
-                    buttons:["Technical Support","Manage Account","Billing Inquiry","Account Cancellation"]
-                }
-            ];
-        case "manageAccount":
-            return [
-                ...state,
-                {
-                    userResponse:"Manage Account",
-                    customRequest:null,
-                    reply:["Thank you, I can definitely help you out with Manage Account."],
-                    response:"Please describe your issue or question or Select a topic from frequently asked questions which can answer your question",
-                    buttons:["Cannot Connect to Wifi","I am connected But Cannot React Internet", "Device Limit Reached", "Frequent Disconnects"]
-                }
-            ];
-
-        case "billingInquiry":
-            return [
-                ...state,
-                {
-                    userResponse:"Manage Account",
-                    customRequest:null,
-                    reply:["Thank you, I can definitely help you out with Manage Account."],
-                    response:"Please describe your issue or question or Select a topic from frequently asked questions which can answer your question",
-                    buttons:["Cannot Connect to Wifi","I am connected But Cannot React Internet", "Device Limit Reached", "Frequent Disconnects"]
-                }
-            ];
-        case "accountCancellation":
-            return [
-                ...state,
-                {
-                    userResponse:"Manage Account",
-                    customRequest:null,
-                    reply:["Thank you, I can definitely help you out with Manage Account."],
-                    response:"Please describe your issue or question or Select a topic from frequently asked questions which can answer your question",
-                    buttons:["Cannot Connect to Wifi","I am connected But Cannot React Internet", "Device Limit Reached", "Frequent Disconnects"]
                 }
             ];
 

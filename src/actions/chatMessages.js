@@ -22,20 +22,24 @@ export const onRequest = (request) =>{
 const receivedData =(response)=>{
     let type="";
     switch(response.tracker.latest_message.intent.name){
-        case "emailId":
-            type="email";
+        case "Internet Connectivity Issues":
+            type="Internet Connectivity Issues";
             break;
-        case "technicalProblem":
-            type="technicalProblemDescription";
+        case "Validation":
+            type="Validation";
             break;
-        case "accountProblem":
-            type="accountProblemDescription";
+        case "Main Menu":
+            type="start";
             break;
-        case "billingProblem":
-            type="billingProblemDescription";
+        case "Account & Billing":
+            type="Account & Billing";
             break;
-
-
+        case "Not Helpful":
+            type="Not Helpful";
+            break;
+        case "EmailId":
+            type="EmailId";
+            break;
     }
     return{
         type:type,
@@ -46,49 +50,5 @@ const receivedData =(response)=>{
 export const onOpen = () =>{
     return{
         type:"start"
-    };
-};
-
-export const onTechnicalSupport = () =>{
-    return{
-        type:"technicalSupport"
-    };
-};
-
-export const onCannotConnectToWifi = () =>{
-    return{
-        type:"cannotConnectToWifi"
-    };
-};
-
-export const onHelpful = () =>{
-    return{
-        type:"helpful"
-    };
-};
-
-export const onNotHelpful = () =>{
-    return{
-        type:"notHelpful"
-    };
-};
-
-
-
-export const onMainMenu = () =>{
-    return{
-        type:"mainMenu"
-    };
-};
-
-export const onBillingInquiry = () =>{
-    return{
-        type:"billingInquiry"
-    };
-};
-
-export const onAccountCancellation = () =>{
-    return{
-        type:"accountCancellation"
     };
 };

@@ -171,7 +171,7 @@ class BotTraining extends Component {
                                        ))}</div> 
 
                                     <div className="d-flex justify-content-between px-5 pb-3 position-relative margin_div">
-                                        <button type="button" className="p-2 btn btn-info mr-1" onClick={this.handelAddIntentTextbox}>ADD More</button>
+                                        <button type="button" className="p-2 btn btn-info mr-1" onClick={this.handelAddIntentTextbox}>Add More</button>
                                         <button type="submit" className="p-2 btn btn-info width_button" onClick={this.saveTrainIntents}>Save</button>
                                         <button type="submit" className="p-2 btn btn-info width_button" onClick={this.handelCloseIntentDiv}>Cancel</button>
                                     </div>                                    
