@@ -1,8 +1,8 @@
 import {v4} from "node-uuid";
 
 export const chatMessages = (state = [], action)=>{
-    var userResponse = null;
-    var customRequest = null;
+    let userResponse = null;
+    let customRequest = null;
     switch(action.type){
         case "start":
             userResponse = null;
